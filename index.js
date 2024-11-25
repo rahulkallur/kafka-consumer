@@ -30,7 +30,7 @@ const run = async () => {
   consumerData.run({
     eachMessage: async ({ topic, partition, message }) => {
       try {
-        console.log("Received Time:", `${Math.floor(Date.now() / 1000)}`);
+        console.log("Received Time:", `${Math.floor(Date.now() / 1000)}`,`${Date.now() % 1000}`);
         let payLoadParsed = JSON.parse(message.value.toString());
         console.log(payLoadParsed);
       } catch (error) {
